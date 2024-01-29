@@ -1,35 +1,182 @@
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #82cdff;
 }
 
-.header{
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.winner-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0099ff;
+  font-size: 33px;
+  font-weight: 500;
+  color: #fff;
+  height: 74px;
+  width: 430px;
+  border-radius: 12px 12px 0 0;
+}
+
+.scoreboard-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  height: 148px;
+  background-color: #0099ff;
+  border-radius: 17px;
+}
+
+.player-name {
+  color: #fff;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.score {
+  color: #0099ff;
+  background-color: #dbf1ff;
+  border-radius: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 131px;
+  height: 120px;
+  font-size: 104px;
+  font-weight: 900;
+}
+
+.score-separetor {
+  color: #fff;
+  font-size: 58px;
+  font-weight: 900;
+}
+
+.battlefield {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+  height: 21.563em;
+  width: 100%;
+  padding: 0 2%;
+  gap: 16px;
+}
+
+.button-move-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.button-move {
+  width: 220px;
+  height: 80px;
+  background-color: #0099ff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 44px;
+  border-radius: 8px;
+  border: 2px solid #0099ff;
+  transition-duration: 0.2s;
+}
+
+.button-move:hover {
+  background-color: #82cdff;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.config-box {
+  display: flex;
+  gap: 100px;
+  margin-top: 22px;
+}
+
+.board{
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-
-.winner-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0099FF;
-    font-size: 33px;
-    font-weight: 500;
-    color: #fff;
-    height: 74px;
-    width: 430px;
-    border-radius: 12px 12px 0 0;
-}
-
-.scoreboard-box{
-    width: 50%;
-    height: 148px;
+    height: 100%;
     background-color: #0099FF;
     border-radius: 17px;
+    padding: 35px;
+}
+
+.move-box{
+    width: 464px;
+    height: 100%;
+    background-color: #DBF1FF;
+    border-radius: 17px;
+}
+
+.move-box-separator{
+    font-size: 104px;
+    color: #fff;
+    font-weight: 900;
+}
+
+@media screen and (max-width:720px) {
+
+    body{
+        padding: 1%;
+        justify-content: space-evenly;
+    }
+
+    .player-name{
+        display: none;
+    }
+
+    .winner-title{
+        width: 90%;
+    }
     
+    .scoreboard-box{
+        width: 100%;
+    }
+
+    .config-box{
+        gap: 10px;
+    }
+
+    .battlefield{
+        flex-direction: column;
+    }
+
+    .button-move-wrapper{
+        flex-direction: row;
+    }
+
+    .button-move{
+        font-size: 24px;
+        width: 120px;
+    }
+
+    .button-move-wrapper{
+        height: unset;
+    }
+    
+    .move-box-separator{
+        font-size: 24px;
+    }
+
+    .board{
+        padding: 10px;
+    }
+
+    .move-box{
+        width: 40%;
+    }
 }
