@@ -104,79 +104,89 @@ body {
   margin-top: 22px;
 }
 
-.board{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.board {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #0099ff;
+  border-radius: 17px;
+  padding: 35px;
+}
+
+.move-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 464px;
+  height: 100%;
+  background-color: #dbf1ff;
+  border-radius: 17px;
+}
+
+.move-box img {
+  width: 50%;
+}
+
+#move-box-2{
+  transform: scaleX(-1);
+}
+
+.move-box-separator {
+  font-size: 104px;
+  color: #fff;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    padding: 1%;
+    justify-content: space-evenly;
+  }
+
+  .player-name {
+    display: none;
+  }
+
+  .winner-title {
+    width: 90%;
+  }
+
+  .scoreboard-box {
     width: 100%;
-    height: 100%;
-    background-color: #0099FF;
-    border-radius: 17px;
-    padding: 35px;
-}
+  }
 
-.move-box{
-    width: 464px;
-    height: 100%;
-    background-color: #DBF1FF;
-    border-radius: 17px;
-}
+  .config-box {
+    gap: 10px;
+  }
 
-.move-box-separator{
-    font-size: 104px;
-    color: #fff;
-    font-weight: 900;
-}
+  .battlefield {
+    flex-direction: column;
+  }
 
-@media screen and (max-width:720px) {
+  .button-move-wrapper {
+    flex-direction: row;
+  }
 
-    body{
-        padding: 1%;
-        justify-content: space-evenly;
-    }
+  .button-move {
+    font-size: 24px;
+    width: 120px;
+  }
 
-    .player-name{
-        display: none;
-    }
+  .button-move-wrapper {
+    height: unset;
+  }
 
-    .winner-title{
-        width: 90%;
-    }
-    
-    .scoreboard-box{
-        width: 100%;
-    }
+  .move-box-separator {
+    font-size: 24px;
+  }
 
-    .config-box{
-        gap: 10px;
-    }
+  .board {
+    padding: 10px;
+  }
 
-    .battlefield{
-        flex-direction: column;
-    }
-
-    .button-move-wrapper{
-        flex-direction: row;
-    }
-
-    .button-move{
-        font-size: 24px;
-        width: 120px;
-    }
-
-    .button-move-wrapper{
-        height: unset;
-    }
-    
-    .move-box-separator{
-        font-size: 24px;
-    }
-
-    .board{
-        padding: 10px;
-    }
-
-    .move-box{
-        width: 40%;
-    }
+  .move-box {
+    width: 40%;
+  }
 }
