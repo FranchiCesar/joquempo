@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Joquempo</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <h1 class="winner-title">Jogador 1 ganhou!</h1>
-        <div class="scoreboard-box">
-            <span class="player-name">Jogador 1</span>
-            <span class="score">01</span>
-            <span class="score-separetor">VS</span>
-            <span class="score">01</span>
-            <span class="player-name">Jogador 2</span>
-        </div>
+      <h1 class="winner-title">Jogador 1 ganhou!</h1>
+      <div class="scoreboard-box">
+        <span class="player-name">Jogador 1</span>
+        <span class="score" id="score-1">01</span>
+        <span class="score-separetor">VS</span>
+        <span class="score" id="score-2">01</span>
+        <span class="player-name">Jogador 2</span>
+      </div>
 
-        <main class="battlefield">
-            <div class="button-move-wrapper">
-                <button class="button-move button-move-stone-1">Pedra</button>
-                <button class="button-move button-move-paper-1">Papel</button>
-                <button class="button-move button-move-scissors-1">Tesoura</button>
-            </div>
-            <div class="board">
-                <div class="move-box" id="move-box-1"></div>
-                <span class="move-box-separator">VS</span>
-                <div class="move-box" id="move-box-2"></div>                
-            </div>
-            <div class="button-move-wrapper">
-                <button class="button-move button-move-stone-2">Pedra</button>
-                <button class="button-move button-move-paper-2">Papel</button>
-                <button class="button-move button-move-scissors-2">Tesoura</button>
-            </div>
-        </main>
-        <footer class="config-box">
-            <button class="button-move">Iniciar</button>
-            <button class="button-move">Resetar</button>
-        </footer>
+      <main class="battlefield">
+        <div class="button-move-wrapper">
+          <button class="button-move button-move-stone-1">Pedra</button>
+          <button class="button-move button-move-paper-1">Papel</button>
+          <button class="button-move button-move-scissors-1">Tesoura</button>
+        </div>
+        <div class="board">
+          <div class="move-box" id="move-box-1"></div>
+          <span class="move-box-separator">VS</span>
+          <div class="move-box" id="move-box-2"></div>
+        </div>
+        <div class="button-move-wrapper">
+          <button class="button-move button-move-stone-2">Pedra</button>
+          <button class="button-move button-move-paper-2">Papel</button>
+          <button class="button-move button-move-scissors-2">Tesoura</button>
+        </div>
+      </main>
+      <footer class="config-box">
+        <button class="button-move">Iniciar</button>
+        <button class="button-move">Resetar</button>
+      </footer>
     </header>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
