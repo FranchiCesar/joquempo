@@ -15,6 +15,8 @@ const $scorePlayer2 = document.querySelector("#score-2");
 
 const $winnerTitle = document.querySelector(".winner-title");
 
+const $buttonReset = document.querySelector("#reset-button");
+
 let movePlayer1 = "";
 let movePlayer2 = "";
 let winner = 0;
@@ -59,20 +61,32 @@ function printWinnerScore() {
 }
 
 function printWinnerName() {
-  if ((winner == 1)) {
+  if (winner == 1) {
     $winnerTitle.innerHTML = "Jogador 1 venceu";
   }
-  if ((winner == 2)) {
+  if (winner == 2) {
     $winnerTitle.innerHTML = "Jogador 2 venceu";
   }
-  if ((winner == 3)) {
+  if (winner == 3) {
     $winnerTitle.innerHTML = "Empatou";
   }
 }
 
-function resetBattlefield(){
-    $moveBox1.innerHTML=''
-    $moveBox2.innerHTML=''
+function resetBattlefield() {
+  $moveBox1.innerHTML = "";
+  $moveBox2.innerHTML = "";
+}
+
+function resetMoveVariables() {
+  movePlayer1 = "";
+  movePlayer2 = "";
+}
+
+function resetGame() {
+  $moveBox1.innerHTML = "";
+  $moveBox2.innerHTML = "";
+  $scorePlayer1.innerHTML = "00";
+  $scorePlayer2.innerHTML = "00";
 }
 
 function handleStone1Move() {
@@ -82,8 +96,12 @@ function handleStone1Move() {
   setWinner();
   addWinnerScore();
   printWinnerScore();
-  printWinnerName()
-  resetBattlefield()
+  printWinnerName();
+  if (winner != 0) {
+    setTimeout(resetBattlefield, 1300);
+    resetMoveVariables();
+    winner = 0;
+  }
 }
 
 function handlePaper1Move() {
@@ -93,8 +111,12 @@ function handlePaper1Move() {
   setWinner();
   addWinnerScore();
   printWinnerScore();
-  printWinnerName()
-  resetBattlefield()
+  printWinnerName();
+  if (winner != 0) {
+    setTimeout(resetBattlefield, 1300);
+    resetMoveVariables();
+    winner = 0;
+  }
 }
 
 function handleScissors1Move() {
@@ -104,8 +126,12 @@ function handleScissors1Move() {
   setWinner();
   addWinnerScore();
   printWinnerScore();
-  printWinnerName()
-  resetBattlefield()
+  printWinnerName();
+  if (winner != 0) {
+    setTimeout(resetBattlefield, 1300);
+    resetMoveVariables();
+    winner = 0;
+  }
 }
 
 function handleStone2Move() {
@@ -115,8 +141,12 @@ function handleStone2Move() {
   setWinner();
   addWinnerScore();
   printWinnerScore();
-  printWinnerName()
-  resetBattlefield()
+  printWinnerName();
+  if (winner != 0) {
+    setTimeout(resetBattlefield, 1300);
+    resetMoveVariables();
+    winner = 0;
+  }
 }
 
 function handlePaper2Move() {
@@ -126,8 +156,12 @@ function handlePaper2Move() {
   setWinner();
   addWinnerScore();
   printWinnerScore();
-  printWinnerName()
-  resetBattlefield()
+  printWinnerName();
+  if (winner != 0) {
+    setTimeout(resetBattlefield, 1300);
+    resetMoveVariables();
+    winner = 0;
+  }
 }
 
 function handleScissors2Move() {
@@ -137,8 +171,12 @@ function handleScissors2Move() {
   setWinner();
   addWinnerScore();
   printWinnerScore();
-  printWinnerName()
-  resetBattlefield()
+  printWinnerName();
+  if (winner != 0) {
+    setTimeout(resetBattlefield, 1300);
+    resetMoveVariables();
+    winner = 0;
+  }
 }
 
 /*Eventos*/
@@ -150,3 +188,5 @@ $buttonScissorPlayer1.addEventListener("click", handleScissors1Move);
 $buttonStonePlayer2.addEventListener("click", handleStone2Move);
 $buttonPaperPlayer2.addEventListener("click", handlePaper2Move);
 $buttonScissorPlayer2.addEventListener("click", handleScissors2Move);
+
+$buttonReset.addEventListener("click", resetGame);
