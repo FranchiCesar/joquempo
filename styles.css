@@ -139,6 +139,16 @@ body {
   font-weight: 900;
 }
 
+.started{
+  background-color: red;
+  border: 1px solid red;
+}
+
+.started:hover{
+  border: 1px solid #8b0000;
+  background-color: #8b0000;
+}
+
 @media screen and (max-width: 720px) {
   body {
     padding: 1%;

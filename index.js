@@ -17,11 +17,14 @@ const $winnerTitle = document.querySelector(".winner-title");
 
 const $buttonReset = document.querySelector("#reset-button");
 
+const $buttonStart = document.querySelector("#start-button");
+
 let movePlayer1 = "";
 let movePlayer2 = "";
 let winner = 0;
 let player1Score = 0;
 let player2Score = 0;
+let gameStart = false;
 
 /*Funcoes*/
 
@@ -70,6 +73,9 @@ function printWinnerName() {
   if (winner == 3) {
     $winnerTitle.innerHTML = "Empatou";
   }
+  if (winner == 0) {
+    $winnerTitle.innerHTML = "Jogando";
+  }
 }
 
 function resetBattlefield() {
@@ -83,13 +89,20 @@ function resetMoveVariables() {
 }
 
 function resetGame() {
-  $moveBox1.innerHTML = "";
-  $moveBox2.innerHTML = "";
-  $scorePlayer1.innerHTML = "00";
-  $scorePlayer2.innerHTML = "00";
+  resetMoveVariables();
+  resetBattlefield();
+  resetScore();
+  printWinnerScore();
+  printWinnerName();
+}
+
+function resetScore() {
+  player1Score = 0;
+  player2Score = 0;
 }
 
 function handleStone1Move() {
+  if (gameStart == false) return;
   $moveBox1.innerHTML =
     '<img src="images/stone.png" alt="imagem pedra" title="imagem pedra">';
   movePlayer1 = "stone";
@@ -105,6 +118,7 @@ function handleStone1Move() {
 }
 
 function handlePaper1Move() {
+  if (gameStart == false) return;
   $moveBox1.innerHTML =
     '<img src="images/paper.png" alt="imagem papel" title="imagem papel">';
   movePlayer1 = "paper";
@@ -120,6 +134,7 @@ function handlePaper1Move() {
 }
 
 function handleScissors1Move() {
+  if (gameStart == false) return;
   $moveBox1.innerHTML =
     '<img src="images/scissors.png" alt="imagem tesoura" title="imagem tesoura">';
   movePlayer1 = "scissor";
@@ -135,6 +150,7 @@ function handleScissors1Move() {
 }
 
 function handleStone2Move() {
+  if (gameStart == false) return;
   $moveBox2.innerHTML =
     '<img src="images/stone.png" alt="imagem pedra" title="imagem pedra">';
   movePlayer2 = "stone";
@@ -150,6 +166,7 @@ function handleStone2Move() {
 }
 
 function handlePaper2Move() {
+  if (gameStart == false) return;
   $moveBox2.innerHTML =
     '<img src="images/paper.png" alt="imagem papel" title="imagem papel">';
   movePlayer2 = "paper";
@@ -165,6 +182,7 @@ function handlePaper2Move() {
 }
 
 function handleScissors2Move() {
+  if (gameStart == false) return;
   $moveBox2.innerHTML =
     '<img src="images/scissors.png" alt="imagem tesoura" title="imagem tesoura">';
   movePlayer2 = "scissor";
@@ -179,6 +197,18 @@ function handleScissors2Move() {
   }
 }
 
+function handleToggleGame() {
+  if (gameStart == true) {
+    gameStart = false;
+    $buttonStart.textContent = "Iniciar";
+    $buttonStart.classList.remove('started')
+  } else {
+    gameStart = true;
+    $buttonStart.classList.add('started')
+    $buttonStart.textContent = "Parar";
+  }
+}
+
 /*Eventos*/
 
 $buttonStonePlayer1.addEventListener("click", handleStone1Move);
@@ -190,3 +220,4 @@ $buttonPaperPlayer2.addEventListener("click", handlePaper2Move);
 $buttonScissorPlayer2.addEventListener("click", handleScissors2Move);
 
 $buttonReset.addEventListener("click", resetGame);
+$buttonStart.addEventListener("click", handleToggleGame);
